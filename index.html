@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    	<title>Weather - Alerts</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/tooplate-style.css">
+	    <link rel="stylesheet" href="css/CSIS_228_lepe.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+
+
+    <section class="banner" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="left-side">
+                        <div class="logo">
+                            <img src="img/logo.png" alt="Weather">
+                        </div>
+                        <div class="tabs-content">
+                            <h4>Choose Your Direction:</h4>
+                            <ul class="social-links">
+                                <li><a href="#">Find us on <em>Facebook</em><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#">Our <em>YouTube</em> Channel<i class="fa fa-youtube"></i></a></li>
+                                <li><a href="#">Follow our <em>instagram</em><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="page-direction-button">
+                            <a href="#"><i class="fa fa-phone"></i>Contact Us Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <div class="submit-form">
+                                <h4>Check weather for <em>your area</em>:</h4>
+                                <form id="form-submit" action="" method="get">
+                                    <div class="row">
+
+                                        <div class="col-md-6" style="width: 100%;">
+                                            <div class="radio-select" style=" border-bottom: 30px solid #dbdada;  margin-top: 0px; margin-bottom: 0px">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                                        <label for="round">Alerts</label>
+                                                        <input type="radio" name="type_query" id="type_alerts" value="alerts" required>
+                                                    </div>
+
+                                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                                        <label for="oneway">Weather</label>
+                                                        <input type="radio" name="type_query" id="type_weather" value="weather" required>
+                                                    </div>
+
+                                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                                        <label for="oneway">Radar</label>
+                                                        <input type="radio" name="type_query" id="type_weather" value="radar" required>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6" id="col_city_radar">
+                                            <fieldset>
+                                                <label for="from">Radars by State:</label>
+												<select id="city_radar">
+													<option>Select a Station Radar</option>
+													<option>Alabama</option>
+													<option>BMX - Birmingham</option>
+													<option>EOX - Fort Rucker</option>
+													<option>HTX - Nrn. Alabama</option>
+													<option>MOB - Mobile</option>
+													<option>MXX - E. Alabama</option>
+													<option>Alaska</option>
+													<option>ABC - Bethel</option>
+													<option>ACG - Sitka/Biorka Is.</option>
+													<option>AEC - Nome</option>
+													<option>AHG - Kenai</option>
+													<option>AIH - Middleton Is.</option>
+													<option>AKC - King Salmon</option>
+													<option>APD - Fairbanks/Pedro Dome</option>
+													<option>Arizona</option>
+													<option>EMX - Tucson</option>
+													<option>FSX - Flagstaff</option>
+													<option>IWA - Phoenix</option>
+													<option>YUX - Yuma</option>
+													<option>Arkansas</option>
+													<option>LZK - Little Rock</option>
+													<option>SRX - W. Ark./Ft. Smith</option>
+													<option>California</option>
+													<option>BBX - Beale AFB</option>
+													<option>BHX - Eureka</option>
+													<option>DAX - Sacramento</option>
+													<option>EYX - Edwards AFB</option>
+													<option>HNX - Hanford/San Joaquin Vly.</option>
+													<option>MUX - San Francisco Bay Area</option>
+													<option>NKX - San Diego</option>
+													<option>SOX - Santa Ana Mtns</option>
+													<option>VBX - Vandenberg AFB</option>
+													<option>VTX - Los Angeles/Oxnard</option>
+													<option>Colorado</option>
+													<option>FTG - Denver/Boulder</option>
+													<option>GJX - Grand Junction</option>
+													<option>PUX - Pueblo</option>
+													<option>Delaware</option>
+													<option>DOX - Dover AFB</option>
+													<option>Florida</option>
+													<option>AMX - Miami</option>
+													<option>BYX - Key West</option>
+													<option>EVX - Eglin AFB/NW Florida</option>
+													<option>JAX - Jacksonville</option>
+													<option>MLB - Melbourne</option>
+													<option>TLH - Tallahassee</option>
+													<option>TBW - Tampa Bay Area</option>
+													<option>Georgia</option>
+													<option>FFC - Atlanta/Peachtree City</option>
+													<option>JGX - Robins AFB</option>
+													<option>VAX - Moody AFB</option>
+													<option>Guam</option>
+													<option>GUA - Andersen AFB</option>
+													<option>Hawaii</option>
+													<option>HKI - Kauai</option>
+													<option>HKM - Kohala</option>
+													<option>HMO - Molokai</option>
+													<option>HWA - South Shore</option>
+													<option>Idaho</option>
+													<option>CBX - Boise</option>
+													<option>SFX - Pocatello</option>
+													<option>Illinois</option>
+													<option>ILX- Central IL</option>
+													<option>LOT - Chicago</option>
+													<option>Indiana</option>
+													<option>IND - Indianapolis</option>
+													<option>IWX - Nrn. Indiana</option>
+													<option>VWX - Evansville</option>
+													<option>Iowa</option>
+													<option>DMX - Des Moines</option>
+													<option>DVN - Quad Cities</option>
+													<option>Kansas</option>
+													<option>DDC - Dodge City</option>
+													<option>GLD - Goodland</option>
+													<option>ICT - Wichita</option>
+													<option>TWX - Topeka</option>
+													<option>Kentucky</option>
+													<option>HPX - Fort Cambell</option>
+													<option>JKL - Jackson</option>
+													<option>LVX - Louisville</option>
+													<option>PAH - Paducah</option>
+													<option>Louisiana</option>
+													<option>LCH - Lake Charles</option>
+													<option>LIX - New Orleans</option>
+													<option>POE - Fort Polk</option>
+													<option>SHV - Shreveport</option>
+													<option>Maine</option>
+													<option>CBW - Caribou</option>
+													<option>GVX - Portland</option>
+													<option>Maryland</option>
+													<option>LWX - Baltimore</option>
+													<option>Massachusetts</option>
+													<option>BOX - Boston</option>
+													<option>Michigan</option>
+													<option>APX - Gaylord</option>
+													<option>DTX - Detroit</option>
+													<option>BRR - Grand Rapids</option>
+													<option>MQT - Marquette</option>
+													<option>Minnesota</option>
+													<option>DLH - Duluth</option>
+													<option>MPX - Minneapolis</option>
+													<option>Mississippi</option>
+													<option>DGX - Jackson/Brandon</option>
+													<option>GWX - Columbus AFB</option>
+													<option>Missouri</option>
+													<option>EAX - Kansas City</option>
+													<option>LSX - St. Louis</option>
+													<option>SGF - Springfield</option>
+													<option>Montana</option>
+													<option>BLX - Billings</option>
+													<option>GGW - Glasgow</option>
+													<option>MSX - Missoula</option>
+													<option>TFX - Great Falls</option>
+													<option>Nebraska</option>
+													<option>LNX - North Platte</option>
+													<option>OAX - Omaha</option>
+													<option>UEX - Hastings</option>
+													<option>Nevada</option>
+													<option>ESX - Las Vegas</option>
+													<option>LRX - Elko</option>
+													<option>RGX - Reno</option>
+													<option>New Jersey</option>
+													<option>DIX - Mt. Holly</option>
+													<option>New Mexico</option>
+													<option>ABX - Albuquerque</option>
+													<option>FDX - Cannon AFB</option>
+													<option>HDX - Holloman AFB</option>
+													<option>New York</option>
+													<option>BGM - Binghamton</option>
+													<option>BUF - Buffalo</option>
+													<option>ENX - Albany</option>
+													<option>OKX - New York City/Upton</option>
+													<option>TYX - Montague</option>
+													<option>North Carolina</option>
+													<option>LTX - Wilmington</option>
+													<option>MHX - Morehead City</option>
+													<option>RAX - Raleigh/Durham</option>
+													<option>North Dakota</option>
+													<option>BIS - Bismarck</option>
+													<option>MBX - Minot AFB</option>
+													<option>MVX - Grand Forks</option>
+													<option>Ohio</option>
+													<option>CLE - Cleveland</option>
+													<option>ILN - Wilmington/Dayton</option>
+													<option>Oklahoma</option>
+													<option>FDR - Frederick</option>
+													<option>INX - Tulsa</option>
+													<option>TLX - Oklahoma City</option>
+													<option>VNX - Vance AFB</option>
+													<option>Oregon</option>
+													<option>MAX - Medford</option>
+													<option>PDT - Pendleton</option>
+													<option>RTX - Portland</option>
+													<option>Pennsylvania</option>
+													<option>CCX - State College</option>
+													<option>DIX - Philadelphia</option>
+													<option>PBZ - Pittsburgh</option>
+													<option>Puerto Rico</option>
+													<option>JUA - Puerto Rico/V.I.</option>
+													<option>South Carolina</option>
+													<option>CAE - Columbia</option>
+													<option>CLX - Charleston</option>
+													<option>GSP - Greenville/Spartanburg</option>
+													<option>South Dakota</option>
+													<option>ABR - Aberdeen</option>
+													<option>FSD - Sioux falls</option>
+													<option>UDX - Rapid City</option>
+													<option>Tennessee</option>
+													<option>MRX - Knoxville/Tri Cities</option>
+													<option>NQA - Memphis</option>
+													<option>OHX - Nashville</option>
+													<option>Texas</option>
+													<option>AMA - Amarillo</option>
+													<option>BRO - Brownsville</option>
+													<option>CRP - Corpus Christi</option>
+													<option>DFX - Laughlin AFB</option>
+													<option>DYX - Dyess AFB</option>
+													<option>EPZ - El Paso</option>
+													<option>EWX - Austin/San Antonio</option>
+													<option>FWS - Dallas/Fort Worth</option>
+													<option>GRK - Central Texas</option>
+													<option>HGX - Houston/Galveston</option>
+													<option>LBB - Lubbock</option>
+													<option>MAF - Midland/Odessa</option>
+													<option>SJT - San Angelo</option>
+													<option>Utah</option>
+													<option>ICX - Cedar City</option>
+													<option>MTX - Salt Lake City</option>
+													<option>Vermont</option>
+													<option>CXX - Burlington</option>
+													<option>Virginia</option>
+													<option>AKQ - Norfolk/Richmond</option>
+													<option>FCX - Blacksburg/Roanoke</option>
+													<option>LWX - Sterling</option>
+													<option>Washington</option>
+													<option>ATX - Seattle/Tacoma</option>
+													<option>LGX - Langley Hill</option>
+													<option>OTX - Spokane</option>
+													<option>Washington D.C.</option>
+													<option>LWX - Washington</option>
+													<option>West Virginia</option>
+													<option>RLX - Charleston</option>
+													<option>Wisconsin</option>
+													<option>ARX - La Crosse</option>
+													<option>GRB - Green Bay</option>
+													<option>MKX - Milwaukee</option>
+													<option>Wyoming</option>
+													<option>CYS - Cheyenne</option>
+													<option>RIW - Riverton</option>
+												</select>
+
+                                            <fieldset>
+                                        </div >
+
+                                        <div class="col-md-6" id="col_city">
+                                            <fieldset>
+                                                <label for="from">State:</label>
+                                                <select name='city' id="city" >
+                                                    <option value="">Select a location...</option>
+													<option value="AL">AL</option>
+													<option value="AK">AK</option>
+													<option value="AS">AS</option>
+													<option value="AR">AR</option>
+													<option value="AZ">AZ</option>
+													<option value="CA">CA</option>
+													<option value="CO">CO</option>
+													<option value="CT">CT</option>
+													<option value="DE">DE</option>
+													<option value="DC">DC</option>
+													<option value="FL">FL</option>
+													<option value="GA">GA</option>
+													<option value="GU">GU</option>
+													<option value="HI">HI</option>
+													<option value="ID">ID</option>
+													<option value="IL">IL</option>
+													<option value="IN">IN</option>
+													<option value="IA">IA</option>
+													<option value="KS">KS</option>
+													<option value="KY">KY</option>
+													<option value="LA">LA</option>
+													<option value="ME">ME</option>
+													<option value="MD">MD</option>
+													<option value="MA">MA</option>
+													<option value="MI">MI</option>
+													<option value="MN">MN</option>
+													<option value="MS">MS</option>
+													<option value="MO">MO</option>
+													<option value="MT">MT</option>
+													<option value="NE">NE</option>
+													<option value="NV">NV</option>
+													<option value="NH">NH</option>
+													<option value="NJ">NJ</option>
+													<option value="NM">NM</option>
+													<option value="NY">NY</option>
+													<option value="NC">NC</option>
+													<option value="ND">ND</option>
+													<option value="OH">OH</option>
+													<option value="OK">OK</option>
+													<option value="OR">OR</option>
+													<option value="PA">PA</option>
+													<option value="PR">PR</option>
+													<option value="RI">RI</option>
+													<option value="SC">SC</option>
+													<option value="SD">SD</option>
+													<option value="TN">TN</option>
+													<option value="TX">TX</option>
+													<option value="UT">UT</option>
+													<option value="VT">VT</option>
+													<option value="VI">VI</option>
+													<option value="NA">VA</option>
+													<option value="WA">WA</option>
+													<option value="WV">WV</option>
+													<option value="WI">WI</option>
+													<option value="WY">WY</option>
+													<option value="PZ">PZ</option>
+													<option value="PK">PK</option>
+													<option value="PH">PH</option>
+													<option value="PS">PS</option>
+													<option value="PM">PM</option>
+													<option value="AN">AN</option>
+													<option value="AM">AM</option>
+													<option value="GM">GM</option>
+													<option value="LS">LS</option>
+													<option value="LM">LM</option>
+													<option value="LH">LH</option>
+													<option value="LC">LC</option>
+													<option value="LE">LE</option>
+													<option value="LO">LO</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="col-md-6" id="col_country">
+                                            <fieldset>
+                                                <label for="to">City:</label>
+                                                <select name='country' id="country" >
+                                                    <option value="test">Select a location...</option>
+                                                    <option value="test"></option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="col-md-6" id="col_dateSelected">
+                                            <fieldset>
+                                                <label for="Day">Date:</label>
+												<input id="dateSelected" type="text" class="form-control" placeholder="Select date..."  >
+                                            </fieldset>
+                                        </div>
+
+
+                                        <div class="col-md-6" style="width: 100%;">
+                                            <fieldset>
+                                                <button type="submit" id="form-submit_botton" class="btn"  onclick="return validateForm();">Get Weather</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Image loader -->
+	<div class="loader"></div>
+
+	<!-- Window modal Alerts -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal" style='display: none;"' id="btn_alerts"></button>
+	<div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+	  <div class="modal-dialog" role="document" style="width: 60%;">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="gridModalLabel" style="font-weight: 900;color: #360969">Weather Alerts</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+		  </div>
+
+		  <div class="modal-body">
+			<div class="container-fluid bd-alert" id="bd-alert">
+
+			</div>
+		  </div>
+
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+    <div class="tabs-content" id="radarHTML" style="display:none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Images Radar</h2>
+                        <h1 class="heading_radar">Radar</h1>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="col-md-12">
+                        <div class="weather-content">
+                            <div class="row">
+
+                                <!-- Group of radar -->
+                                <div class="col-md-12">
+
+                                    <section class="weathergroup" id="radarImages" style="width: 600px;height: 656px;align-content: center;">
+
+
+
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="tabs-content" id="weather">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Check Weather For 5 NEXT Days</h2>
+                        <h1 class="heading_city"></h1>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="col-md-12">
+                        <div class="weather-content">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                	<!-- Tabs Days -->
+                                    <ul class="tabs clearfix" data-tabgroup="second-tab-group" id="tab_days_forecast" >
+
+                                    </ul>
+
+                                </div
+                                >
+                                <!-- Group of Days -->
+                                <div class="col-md-12">
+
+                                    <section id="second-tab-group" class="weathergroup">
+
+
+                                        <div id="monday">
+
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+
+                                        <div id="tuesday">
+                                            <div class="row">
+
+
+                                            </div>
+                                        </div>
+                                        <div id="wednesday">
+                                            <div class="row">
+
+
+                                            </div>
+                                        </div>
+                                        <div id="thursday">
+                                            <div class="row">
+
+
+                                            </div>
+                                        </div>
+
+                                        <div id="friday">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+
+                                        <div id="saturday">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+
+                                        <div id="sunday">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item first-service">
+                        <div class="service-icon"></div>
+                        <h4>Easy Tooplate</h4>
+                        <p>Donec varius porttitor iaculis. Integer sollicitudin erat et ligula viverra vulputate. In in quam efficitur, pulvinar justo ut, tempor nunc. Phasellus pharetra quis odio.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item second-service">
+                        <div class="service-icon"></div>
+                        <h4>Unique Ideas</h4>
+                        <p>Cras ligula diam, tristique at aliquam at, fermentum auctor turpis. Proin leo massa, iaculis elementum massa et, consectetur varius dolor. Fusce sed ipsum sit.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item third-service">
+                        <div class="service-icon"></div>
+                        <h4>Best Support</h4>
+                        <p>Fusce leo dui. Mauris et justo eget arcu ultricies porta. Nulla facilisi. Nulla nec risus sit amet magna hendrerit venenatis. Sed porta tincidunt lectus eget ultrices.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="tabs-content" id="recommended-hotel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Recommended Hotel For You</h2>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="col-md-4">
+                            <ul class="tabs clearfix" data-tabgroup="third-tab-group">
+                                <li><a href="#livingroom" class="active">Living Room <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#suitroom">Suit Room <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#swimingpool">Swiming Pool <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#massage">Massage Service <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#fitness">Fitness Life <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#event">Evening Event <i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <section id="third-tab-group" class="recommendedgroup">
+                            <div id="livingroom">
+                                <div class="text-content">
+                                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/rMxTreSFMgE">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div id="suitroom">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="owl-suiteroom" class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/suite-02.jpg" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Clean And Relaxing Room</h4>
+                                                        <span>Aurora Resort</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/suite-01.jpg" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Special Suite Room TV</h4>
+                                                        <span>Khao Yai Hotel</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/suite-03.jpg" alt="">
+                                                    <div class="text-content">
+                                                        <h4>The Best Sitting</h4>
+                                                        <span>Hotel Grand</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="swimingpool">
+                                <img src="img/swiming-pool.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Lovely View Swiming Pool For Special Guests</h4>
+                                            <span>Victoria Resort and Spa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="massage">
+                                <img src="img/massage-service.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Perfect Place For Relaxation</h4>
+                                            <span>Napali Beach</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fitness">
+                                <img src="img/fitness-service.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Insane Street Workout</h4>
+                                            <span>Hua Hin Beach</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="event">
+                                <img src="img/evening-event.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Finest Winery Night</h4>
+                                            <span>Queen Restaurant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section id="most-visited">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Most Visited Places</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="owl-mostvisited" class="owl-carousel owl-theme">
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>River Views</h4>
+                                    <span>New York</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Proin dignissim</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Fusce sed ipsum</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Vivamus egestas</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Aliquam elit metus</h4>
+                                    <span>New York</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Phasellus pharetra</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>In in quam efficitur</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Sed faucibus odio</h4>
+                                    <span>NEW YORK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Donec varius porttitor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#" class="scroll-top">Back To Top</a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <p>&copy; 2019 Weather Proyect
+
+                | MCCKC <em> CSIS228</em> | Juan Ramon Lepe</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/datepicker.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+
+
+        // navigation click actions
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        // scroll to top action
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');
+        });
+        // mobile nav toggle
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+
+    // scroll function
+    function scrollToID(id, speed){
+        var offSet = 0;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+
+    </script>
+
+    <!- Here is included file for project CSIS_228 -->
+    <script src="js/CSIS_228_lepe.js"></script>
+
+
+</body>
+</html>
