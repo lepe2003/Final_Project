@@ -9,6 +9,11 @@
     opacity: .8;
 }
 
+.date_day
+{
+	font-size: 18px;font-weight: 900;color: #fff;margin-bottom: 40px;margin-top: 0px;
+}
+
 #radarHTML {
     margin-top: 50px;
 }
@@ -74,6 +79,7 @@
     outline: none;
     padding-left: 15px;
     margin-left: 0px;
+    margin-top: 0px;
     display: inline-block;
     box-shadow: none;
     border-radius: 0px;
