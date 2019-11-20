@@ -153,7 +153,7 @@ var gObjectsClass = {
 		var container = document.getElementById("tab_days_forecast");
 		container.innerHTML = "";
 
-		document.getElementsByClassName("heading_city")[0].innerHTML = garrParameter.city + " - "+garrParameter.region;
+		document.getElementsByClassName("heading_city")[0].innerHTML = garrParameter.city + " - "+garrParameter.regionName;
 
 		for (var i=0; i<gobDaysForecast.length;i++)
 		{
@@ -200,6 +200,7 @@ var gObjectsClass = {
 		{
 			container = document.getElementById(gobDaysForecast[i].split("|")[0].toLowerCase());
 			container.getElementsByClassName("row")[0].innerHTML = "";
+
 			if (i==0) container.setAttribute("style", "display: block");;
 
 			//loop for elements of weather
@@ -221,6 +222,7 @@ var gObjectsClass = {
 				//Validation of date and day of week
 				if (is_element_of_day())
 				{
+					document.getElementById(container.id+"_date").innerHTML = "Date: "+gobForecast.properties.periods[i_details].startTime.substr(0,10);
 					strWeather_item += this._DetailHTML(gobForecast.properties.periods[i_details]);
 					complete_elements++;
 				}
@@ -275,7 +277,7 @@ var gObjectsClass = {
                         "                              </div>"+
                         "                              <span id=>"+parrData.temperature+"&deg;"+parrData.temperatureUnit+"</span>"+
                         "                              <ul class='time-weather'>"+
-                        "                                  <li> Forecast<span  title='"+parrData.shortForecast+"'>"+(parrData.shortForecast.length>=15 ? parrData.shortForecast.substr(0,15)+"..":parrData.shortForecast)+"</span></li>"+
+                        "                                  <li> Forecast<span  title='"+parrData.detailedForecast+"'>"+(parrData.shortForecast.length>=15 ? parrData.shortForecast.substr(0,15)+"..":parrData.shortForecast)+"</span></li>"+
                         "                                  <li>Win direcction <span>"+parrData.windDirection+"</span></li>"+
                         "                                  <li>Wind speed<span>"+parrData.windSpeed+"</span></li>"+
                         "                              </ul>"+
@@ -303,7 +305,6 @@ var gObjectsClass = {
 		}
 	}
 }
-
 
 // Setup page
 var setup_page = function (){
@@ -358,11 +359,17 @@ function load_page(){
 
 		// Add events for objects
 		document.getElementById('form-submit').addEventListener('submit',requestData,false);
+
 		// Add event for each option
 		var radios = document.querySelectorAll('input[type=radio][name="type_query"]');
 		Array.prototype.forEach.call(radios, function(radio) {
 		   radio.addEventListener('change', verifyQuery);
 		});
+
+		document.getElementById('city').addEventListener('change',
+		  function(){
+		    garrParameter.regionName = this.options[document.getElementById('city').selectedIndex].text;
+  		});
 
 		setup_page();
 
@@ -381,16 +388,16 @@ function load_page(){
 function validateForm()
 {
 	try {
+
 		garrParameter.city = document.getElementById("city").value;
-		garrParameter.country = document.getElementById("country").value;
 		garrParameter.type_query = $('input[name=type_query]:checked').attr('value');;
 		garrParameter.date_query = document.getElementById("dateSelected").value;
-		garrParameter.city_radar = document.getElementById("city_radar").value;
+
 
 		// Weather Option
 		if (garrParameter.type_query == "weather")
 		{
-			if ( garrParameter.city == ""  || garrParameter.country =="" || garrParameter.type_query == "" || garrParameter.date_query == "" )
+			if ( garrParameter.city == ""  ||  garrParameter.type_query == "" || garrParameter.date_query == "" )
 			{
 				window.alert("Please, select options to see weather.");
 				return false;
@@ -401,13 +408,14 @@ function validateForm()
 		{
 			if ( garrParameter.city == ""  )
 			{
-				window.alert("Please, select a State to see Alerts.");
+				window.alert("Please, select an area to see Alerts.");
 				return false;
 			}
 		}
 		// Radar Option
 		else if (garrParameter.type_query == "radar")
 		{
+			garrParameter.city_radar = document.getElementById("city_radar").value;
 			var city_radar = garrParameter.city_radar.split("-");
 			if (city_radar.length ==1)
 			{
@@ -421,13 +429,11 @@ function validateForm()
 		showError(error);
 		 showLoader(0);
 	}
-
 }
 
 // Request API's
 function requestData( event ) {
 		 try{
-
 			var larrParameter = garrParameter;
 			var lobData ;
 			showLoader(1);
@@ -468,7 +474,7 @@ function requestData( event ) {
 
 				//Show day selected
 				gObjectsClass._activeDay(dayWeek[0]);
-
+				$('html, body').animate({scrollTop:$('#weather')[0].scrollHeight}, 'slow');
 
 			// Alerts Option
 			}else if (larrParameter.type_query == "alerts"){
@@ -539,7 +545,7 @@ function requestData( event ) {
 				var clve_radar = city_radar[0].replace(" ","");
 
 				// title Radar
-				document.getElementsByClassName("heading_radar")[0].innerHTML = " Image for "+city_radar[1];
+				document.getElementsByClassName("heading_radar")[0].innerHTML = city_radar[1];
 
 				texta= ""+
 				"<div id='radar_more_datails'>"+
@@ -558,6 +564,7 @@ function requestData( event ) {
 				"</div>";
 
 				objdivData.innerHTML += texta;
+				$('html, body').animate({scrollTop:$('#radarHTML')[0].scrollHeight}, 'slow');
 
 			}
 
@@ -602,7 +609,6 @@ function verifyQuery(event)
 	//Default screen
 	document.getElementById("col_city_radar").setAttribute("style","display: none");
 	document.getElementById("col_city").setAttribute("style","display: none");
-	document.getElementById("col_country").setAttribute("style","display: none");
 	document.getElementById("col_dateSelected").setAttribute("style","display: none");
 	document.getElementById("radarHTML").setAttribute("style","display: none");
 	document.getElementById("weather").setAttribute("style","display: block");
@@ -611,7 +617,6 @@ function verifyQuery(event)
  		document.getElementById("col_city").setAttribute("style","display: block");
    } else if ( this.value === 'weather' ) { // Elements to get weather
  		document.getElementById("col_city").setAttribute("style","display: block");
- 		document.getElementById("col_country").setAttribute("style","display: block");
  		document.getElementById("col_dateSelected").setAttribute("style","display: block");
    } else if ( this.value === 'radar' ) { // Elements to get Images Radar
  		document.getElementById("col_city_radar").setAttribute("style","display: block");
