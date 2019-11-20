@@ -21,7 +21,7 @@ f.  Team names and date
 9.  getElementByID or getElementByTagName or getElementsByName
 10.  Exception handling: try, catch, finally
 
-----------------------------------
+-------------------------------------------------
 
 Institution: Metropolitan Community Collage
 Class: CSIS228
@@ -39,7 +39,7 @@ Objective: Web Site to chek weather.
 		2. Option to get weather by state
 		3. Option to get images Radar.
 
------------------------
+--------------------------------------------------
 IMPORTANT:
 
 This project is using external libraries like styles bootstrap, calendar datepicker , plugins for carousel and others.
